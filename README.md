@@ -250,7 +250,6 @@ Embora a arquitetura baseada em NotebookLM funcione perfeitamente como um MVP (*
 
 --------
 
-
 # Smart Repertoire Guide
 
 ## Contexto e Objetivos
@@ -260,7 +259,7 @@ O ensino de improvisação musical na guitarra e no violão exige o acesso a um 
 * **Poluição e Inconsistência de Dados:** Plataformas públicas de cifras frequentemente contêm erros de transcrição, omissão de extensões fundamentais (como nonas, décimas terceiras ou alterações de jazz) e diagramas incorretos que distorcem a realidade da peça musical.
 * **Sobrecarga Cognitiva:** Motores de busca tradicionais não filtram repertórios por densidade harmônica ou critérios pedagógicos (como presença de modulações ou número de acordes na estrutura), expondo alunos iniciantes a progressões frustrantes e complexas demais para o seu momento de aprendizado.
 
-O **Smart Repertoire Guide** resolve esse problema ao atuar como um motor especialista em triagem pedagógica e recomendação de repertório baseado em inteligência artificial. O núcleo do sistema opera sob uma política estrita de fonte fechada, restringindo sua base de conhecimento a songbooks e métodos de alta fidelidade e credibilidade histórica (como as obras de Almir Chediak e Real Books de Jazz). O objetivo principal é guiar o estudante através de um funil interativo que identifica sua maturidade teórica, varre a base de dados privada para selecionar opções ideals de treino e entrega um roteiro analítico completo com foco em notas-alvo (*target notes*) e estratégias de escalas para o improviso.
+O **Smart Repertoire Guide** resolve esse problema ao atuar como um motor especialista em triagem pedagógica e recomendação de repertório baseado em inteligência artificial. O núcleo do sistema opera sob uma política estrita de fonte fechada, restringindo sua base de conhecimento a songbooks e métodos de alta fidelidade e credibilidade histórica (como as obras de Almir Chediak e Real Books de Jazz). O objetivo principal é guiar o estudante através de um funil interativo que identifica sua maturidade teórica, varre a base de dados privada para selecionar opções ideais de treino e entrega um roteiro analítico completo com foco em notas-alvo (*target notes*) e estratégias de escalas para o improviso.
 
 ---
 
@@ -295,7 +294,7 @@ A base de dados do projeto foi expandida para uma abordagem de estresse, submete
 
 #### Caso de Teste 3: Confronto de Imagem de Alta Resolução
 * **Pergunta:** *"Quais os acordes da música 'In April' de Bill Evans e em que página se encontra essa música?"*
-* **Resultado Técnico:** **Sucesso Parcial (Mapeamento Estrutural com Erros de Sintaxe Harmônica Complexa).** Avaliando o *Bill Evans Fake Book* (imagem `in_april.png`), o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções. No entanto, a análise fina dos acordes revealed os limites do modelo para decodificar convenções avançadas de arranjo e escrita musical em formato de imagem.
+* **Resultado Técnico:** **Sucesso Parcial (Mapeamento Estrutural com Erros de Sintaxe Harmônica Complexa).** Avaliando o *Bill Evans Fake Book* (imagem `in_april.png`), o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções. No entanto, a análise fina dos acordes revelou os limites do modelo para decodificar convenções avançadas de arranjo e escrita musical em formato de imagem.
 * **Pontos de Erro Detectados (Análise de Engenharia Harmônica):**
   1. **Omissão de Acidentes:** Na partitura original, o segundo acorde é um $Bb7(\flat13 \flat9)$, mas o modelo ignorou o símbolo de bemol da 13ª, extraindo-o como `Bb7(13 b9)`.
   2. **Confusão com Linha de Baixo Caminhando:** No trecho onde o acorde de $Db9$ se mantém enquanto o baixo faz um movimento linear de descida ($Db9/Bb \rightarrow /Ab$), o motor visual da IA se confundiu com as barras de inversão e inventou um acorde inexistente (`Ab/Eb`) na transcrição textual.
@@ -360,7 +359,7 @@ A base de dados do projeto foi expandida para uma abordagem de estresse, submete
 Durante a fase de homologação do ecossistema, foi mapeado um gargalo crítico de arquitetura decorrente das limitações da interface web do Google NotebookLM:
 
 * **Ausência de Camada de Sistema (System Role):** A ferramenta não possui um campo parametrizável exclusivo para diretrizes de comportamento. Como o arquivo de regras residia inicialmente no mesmo nível dos songbooks (camada de contexto RAG), o modelo tratou instruções de controle como dados consultivos passivos. Para o motor operar corretamente como uma diretriz de funcionamento rígida, as regras de conduta precisam ser injetadas manualmente no primeiro prompt, isolando os songbooks exclusivamente como fontes de consulta secundárias.
-* **Degradação de Performance por Latência:** Forçar a LLM a reavaliar um manual de regras complexas inserido em meio a 45 PDFs densos a cada nova mensagem enviada pelo usuário aumenta o custo computacional por token, resultando em respostas mais lentas.
+* **Degradação de Performance por Latência Linear Unificada:** Forçar a LLM a reavaliar um manual de regras complexas inserido em meio a 45 PDFs densos a cada nova mensagem enviada pelo usuário aumenta o custo computacional por token, resultando em respostas significativamente mais lentas em todas as interações. No protótipo atual, essa latência pesada afeta inclusive a Fase I (questões da triagem pedagógica), onde a IA demora para computar perguntas lógicas simples porque é forçada a carregar a estrutura inteira de songbooks na memória, mesmo que nenhuma busca por cifras esteja ocorrendo naquele momento da conversa.
 * **Exigência de Injeção Manual:** Para garantir que o sistema se comporte 100% como um motor pedagógico rígido para qualquer usuário final — sem o risco de sofrer desvios por buscas diretas —, faz-se necessário que o operador injete manualmente o bloco de código de conduta como o primeiríssimo prompt da sessão de chat, gerando uma fricção indesejada na experiência do usuário (UX).
 * **Vulnerabilidade de Exposição e Propriedade Intelectual (Direitos Autorais):** A interface nativa de compartilhamento do NotebookLM expõe toda a barra lateral de fontes para o usuário final. Sempre que o usuário clica em uma citação técnica da resposta, a interface abre a visualização lateral do PDF completo de apoio, permitindo a leitura e a extração dos songbooks. Disponibilizar a ferramenta ao público geral por este link viola leis de direitos autorais e as políticas de proteção de IP estipuladas para este projeto.
 
@@ -377,7 +376,7 @@ A solução arquitetural consiste em remover os dados e as regras da interface d
 1. **Injeção Oculta de Regras a Nível de Código (System Instructions):** O conteúdo técnico de controle do arquivo de regras será extraído do repositório e injetado diretamente no parâmetro `system_instruction` da API do Gemini (ou via blocos de memória do LangChain). Como essa instrução roda na camada interna do servidor por trás dos panos, a IA a assimila como lei física do ambiente. O usuário comum não precisará colar nenhum prompt e o motor agirá com rigidez pedagógica desde a primeira mensagem.
 2. **Modelo Black-Box de Proteção a Direitos Autorais:** Na infraestrutura própria com FastAPI, o usuário interage única e exclusivamente com uma janela limpa de chat customizada na interface Web. Os 45 PDFs originais ficam armazenados em um servidor privado ou banco de dados vetorial de acesso restrito. Quando o modelo realiza o RAG para extrair uma cifra, o back-end processa os dados, mas esconde completamente os arquivos brutos, os títulos das fontes e as numerações de página originais do cliente final. O usuário recebe apenas a saída de texto gerada, inviabilizando qualquer tipo de pirataria ou vazamento do acervo.
 3. **Separação Estrita de Contexto:** O banco vetorial contendo os songbooks atuará apenas como um agente de consulta sob demanda (*tool retrieval*). O modelo só terá autorização para acessar os dados dos songbooks após a lógica da máquina de estados (controlada pela instrução de sistema) liberar a transição do Estado 1 para o Estado 2.
-4. **Persistência de Estados Eficiente:** O controle do histórico de 20 músicas e o progresso do aluno serão processados por rotinas tradicionais no back-end com persistência em banco de dados relacional (PostgreSQL), aliviando a janela de contexto da LLM e reduzindo a latência do sistema para milissegundos.
+4. **Otimização Assíncrona de Latência (Segregação de Custo de Processamento):** Diferente do modelo do NotebookLM, o back-end em FastAPI quebrará a latência por fases lógicas de processamento. Durante a Fase I (Perguntas de Triagem), o sistema responderá instantaneamente (em milissegundos), pois as rotas de conversação consumirão apenas o prompt de sistema, sem acionar nenhuma ferramenta externa. A demora e o custo computacional de varredura de dados ficarão estritamente restritos ao momento em que o usuário terminar de responder à triagem e a máquina de estados migrar para a Fase II, acionando as queries reais ao banco de songbooks para montar a listagem final.
 
 ---
 
@@ -393,12 +392,12 @@ Esta arquitetura força a LLM a respeitar um fluxo lógico cronológico de execu
 
 O comportamento do motor de recomendação foi projetado para operar em 4 estados sequenciais bem definidos:
 
-```text
+!!!text
 [Início] 
    │
    ▼
 ┌────────────────────────────────────────────────────────┐
-│ ESTADO 1: DIAGNÓSTIVO INTERATIVO (Fase I)               │
+│ ESTADO 1: DIAGNÓSTICO INTERATIVO (Fase I)               │
 │ - Bloqueio de respostas imediatas e genéricas.         │
 │ - Disparo obrigatório do questionário de 5 perguntas.  │
 └──────────────────────────┬─────────────────────────────┘
@@ -427,14 +426,14 @@ O comportamento do motor de recomendação foi projetado para operar em 4 estado
 │ - Aguarda escolha do usuário.                           │
 │ - Output 2: Geração do roteiro avançado (Chord-Scale).  │
 └────────────────────────────────────────────────────────┘
-```
+!!!
 
 ### Técnicas de Engenharia de Prompt Aplicadas
 
 O desenvolvimento das diretrizes utilizou padrões avançados de design de prompts para extrair o máximo de precisão teórica do modelo:
 
 * **Injeção de Contexto Restrito (*Grounding*):** O sistema aplica uma política de "fonte fechada". Ao proibir o uso da internet para o repertório, o modelo é forçado a atuar estritamente sobre os vetores dos PDFs anexados, eliminando completamente o risco de inventar cifras que não pertencem aos métodos originais.
-* **Pensamento em Cadeia Baseado em Domínio (*Domain Chain-of-Thought*):** No tratamento de exceções (Fase III), instruímos a IA a pensar como um musician profissional antes de tomar uma decisão. Ela é orientada a analisar a cadência harmônica (ex: notar um movimento de II-V-I) para validar se uma letra borrada faz sentido musical ou se a música deve ser descartada da listagem.
+* **Pensamento em Cadeia Baseado em Domínio (*Domain Chain-of-Thought*):** No tratamento de exceções (Fase III), instruímos a IA a pensar como um mestre de harmonia antes de tomar uma decisão. Ela é orientada a analisar a cadência harmônica (ex: notar um movimento de II-V-I) para validar se uma cifra borrada faz sentido musical ou se a música deve ser descartada da listagem.
 * **Políticas de Fallback Dinâmico:** O sistema possui flexibilidade arquitetural. Se faltarem dados puros para o aluno iniciante (Nível 1), o modelo está autorizado a reescrever e simplificar arranjos complexos sob demanda, garantindo que a experiência do usuário nunca seja interrompida por falta de opções na base de dados privada.
 
 ---
@@ -474,5 +473,3 @@ A evolução do protótipo atual para um ambiente de produção comercial e mult
 
 #### 3. Vetorização Avançada de Imagens e Partituras (Vector Embeddings)
 * Para solucionar o gargalo técnico mapeado no Caso de Teste 5 (onde a IA falha ao ler partituras puras e manuscritos), integrar modelos de visão computacional especializados em leitura de partituras (como *Optical Music Recognition - OMR*) acoplados a um banco de dados vetorial (**ChromaDB** ou **Pinecone**). Isso converterá o desenho das notas na pauta em vetores semânticos, permitindo que o motor analise a harmonia de músicas que não possuem cifras textuais escritas.
-
-FALAR TAMBÈM SOBRE A DEMORA NAS RESPOSTAS. A DEMORA DEVE SER APENAS PARA CONSULTAR O BANCO DE DADOS NA HORA DE ENCONTRAR AS MÚSICAS. ENQUANTO ESTÁ ROLANDO AS PERGUNTAS DE TRIAGEM A RESPOSTA DEVE SER MAIS RÁPIDA POIS NÃO É NECESSÁRIO CONSULTA AO BANCO DE SONGBOOKS.
