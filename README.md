@@ -62,27 +62,29 @@ Para validar a integridade da ingestão de dados, foram aplicadas consultas estr
 #### Caso de Teste 1: Até Parece (Leitura de OCR Nativo e Híbrido)
 | Documento Original (PDF) | Resposta da IA |
 | :---: | :---: |
-| ![PDF Até Parece](imagens/ate_parece.png) | ![Resposta IA Até Parece](imagens/ate_parece_resposta.jpeg) |
+| ![PDF Até Parece](images/ate_parece.png) | ![Resposta IA Até Parece](images/ate_parece_resposta.jpeg) |
 
 #### Caso de Teste 2: Desejo do Mar (Mapeamento de Ruído e Auto-Correção)
-| Documento Original (PDF) | Resposta com Auto-Correção da IA |
-| :---: | :---: |
-| ![PDF Desejo do Mar](imagens/pdf_desejo_mar.png) | ![Resposta IA Desejo do Mar](imagens/ia_desejo_mar.png) |
+| Documento Original (PDF) | Identificação do Ruído (IA) | Resposta com Auto-Correção (IA) |
+| :---: | :---: | :---: |
+| ![PDF Desejo do Mar](images/desejo_do_mar.png) | ![Resposta IA Desejo do Mar](images/desejo_do_mar_resposta.jpeg) | ![Resposta IA Desejo do Mar](images/desejo_do_mar_resposta_2.jpeg) |
 
 #### Caso de Teste 3: In April (Confronto de Imagem de Alta Resolução)
 | Documento Original (PDF) | Resposta da IA |
 | :---: | :---: |
-| ![PDF In April](imagens/pdf_in_april.png) | ![Resposta IA In April](imagens/ia_in_april.png) |
+| ![PDF In April](images/in_april.png) | ![Resposta IA In April](images/in_april_resposta.jpeg) |
 
 #### Caso de Teste 4: Na Baixa do Sapateiro (Verificação de Ambiguidade)
-| Partitura Original - Vol. 1 | Resposta Corrigida pela IA |
+| Partitura Original - Vol. 1 | Partitura Original - Bahia | 
 | :---: | :---: |
-| ![PDF Ary Barroso](imagens/pdf_ary_barroso.png) | ![Resposta IA Ary Barroso](imagens/ia_ary_barroso.png) |
+| ![PDF Ary Barroso](images/bahia.png) | ![PDF Ary Barroso](images/na_baixa_do_sapateiro.png) |
+| Primeira Identificação (Vol. 2 / "Bahia") | Resposta Corrigida (Vol. 1 / Pág. 89) |
+| ![Resposta IA Ary Barroso](images/na_baixa_do_sapateiro_resposta_1.jpeg) | ![Resposta IA Ary Barroso](images/na_baixa_do_sapateiro_resposta_2.jpeg) |
 
 #### Caso de Teste 5: Gargalo Técnico (Partituras Puras e Manuscritos)
-| Documento Original (PDF) | Resposta da IA (Limite Atingido) |
-| :---: | :---: |
-| ![PDF Beatles/Altamiro](imagens/pdf_limite.png) | ![Resposta IA Limite](imagens/ia_limite.png) |
+| Documento Original (PDF) Tu e Eu | Documento Original (PDF) We Can Work It Out | Resposta da IA (Limite Atingido) |
+| :---: | :---: | :---: |
+| ![PDF Beatles/Altamiro](images/tu_e_eu.png) | ![Resposta IA Limite](images/we_can_work_it_out.png) | ![Resposta IA Limite](images/tu_e_eu_resposta.jpeg) |
 
 ---
 
