@@ -29,17 +29,17 @@ Para validar a integridade da ingestão de dados, foram aplicadas consultas estr
 
 #### Caso de Teste 1: Validação de OCR Nativo & Híbrido
 *   **Pergunta:** *"Com base no livro Bossa Nova 1, quais os acordes utilizados para a música 'Até parece' de Carlos Lyra?"*
-*   **Resultado Técnico:** **Sucesso.** O modelo mapeou com precisão a sequência harmônica completa, identificando extensões complexas como `B7(b9)`, `F#m7(b5)`, `E7(13)`, `E7(b13)`, `G#m7(11)` e `G7(#11)`. A única divergência menor foi a leitura do acorde `D(6/9)` (presente no diagrama da imagem `image_41fd42.jpg`), extraído textualmente como `D9`. O modelo conseguiu varrer as linhas iniciais e o corpo da cifra perfeitamente.
+*   **Resultado Técnico:** **Sucesso.** O modelo mapeou com precisão a sequência harmônica completa, identificando extensões complexas como `B7(b9)`, `F#m7(b5)`, `E7(13)`, `E7(b13)`, `G#m7(11)` e `G7(#11)`. A única divergência menor foi a leitura do acorde `D(6/9)` (presente no diagrama da imagem `ate_parece.png`), extraído textualmente como `D9`. O modelo conseguiu varrer as linhas iniciais e o corpo da cifra perfeitamente.
 
 #### Caso de Teste 2: Mapeamento de Ruído e Auto-Correção
 *   **Pergunta:** *"Você encontrou algum caractere estranho, sequência de símbolos sem sentido (como '11111;;' ou letras embaralhadas) ou acordes com grafia corrompida ao ler a cifra de 'Desejo do mar'?"*
 *   *(Nota de Engenharia de Dados: Para formular esta consulta com precisão, o trecho original do PDF foi previamente copiado para um editor de texto plano para inspecionar os metadados gerados pelo OCR analógico. Isso permitiu antecipar quais strings estranhas o modelo indexaria na base de conhecimento).*
-* **Resultado Técnico:** **Sucesso Avançado (Auto-Correção).** O modelo não apenas identificou os ruídos gerados pela leitura analógica dos diagramas visuais dos acordes (identificando strings estranhas como `# 11111;;` e `~i 11.,`), como usou inteligência de contexto de Bossa Nova para tratar os dados corrompidos. Ele apontou que a string `GIM` correspondia a `G7M` e deduziu que `D~(9)` representava a cifragem que de fato correspondia ao acorde $D_7^4(9)$ na imagem `image_3714b8.jpg`.
+* **Resultado Técnico:** **Sucesso Avançado (Auto-Correção).** O modelo não apenas identificou os ruídos gerados pela leitura analógica dos diagramas visuais dos acordes (identificando strings estranhas como `# 11111;;` e `~i 11.,`), como usou inteligência de contexto de Bossa Nova para tratar os dados corrompidos. Ele apontou que a string `GIM` correspondia a `G7M` e deduziu que `D~(9)` representava a cifragem que de fato correspondia ao acorde $D_7^4(9)$ na imagem `desejo_do_mar.png`.
 
 
 #### Caso de Teste 3: Confronto de Imagem de Alta Resolução
 *   **Pergunta:** *"Quais os acordes da música 'In April' de Bill Evans e em que página se encontra essa música?"*
-*   **Resultado Técnico:** **Sucesso.** Avaliando o *Bill Evans Fake Book* (imagem `image_41fdfc.jpg`), que consiste em um PDF puramente de imagens de alta resolução, o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções (Seção A e Seção B), extraindo blocos harmônicos densos de jazz como `DbMaj9`, `Bb7(13 b9)`, `Fm11`, e `Bb7(b9 b5)`.
+*   **Resultado Técnico:** **Sucesso.** Avaliando o *Bill Evans Fake Book* (imagem `in_april.png`), que consiste em um PDF puramente de imagens de alta resolução, o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções (Seção A e Seção B), extraindo blocos harmônicos densos de jazz como `DbMaj9`, `Bb7(13 b9)`, `Fm11`, e `Bb7(b9 b5)`.
 
 #### Caso de Teste 4: Verificação de Ambiguidade e Auto-Correção Histórica
 *   **Pergunta:** *"Encontre a música 'Na baixa do sapateiro' de Ary Barroso. Quais os 10 primeiros acordes?"*
@@ -62,7 +62,7 @@ Para validar a integridade da ingestão de dados, foram aplicadas consultas estr
 #### Caso de Teste 1: Até Parece (Leitura de OCR Nativo e Híbrido)
 | Documento Original (PDF) | Resposta da IA |
 | :---: | :---: |
-| ![PDF Até Parece](imagens/pdf_ate_parece.png) | ![Resposta IA Até Parece](imagens/ia_ate_parece.png) |
+| ![PDF Até Parece](imagens/ate_parece.png) | ![Resposta IA Até Parece](imagens/ate_parece_resposta.jpeg) |
 
 #### Caso de Teste 2: Desejo do Mar (Mapeamento de Ruído e Auto-Correção)
 | Documento Original (PDF) | Resposta com Auto-Correção da IA |
