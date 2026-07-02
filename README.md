@@ -39,7 +39,12 @@ Para validar a integridade da ingestão de dados, foram aplicadas consultas estr
 
 #### Caso de Teste 3: Confronto de Imagem de Alta Resolução
 *   **Pergunta:** *"Quais os acordes da música 'In April' de Bill Evans e em que página se encontra essa música?"*
-*   **Resultado Técnico:** **Sucesso.** Avaliando o *Bill Evans Fake Book* (imagem `in_april.png`), que consiste em um PDF puramente de imagens de alta resolução, o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções (Seção A e Seção B), extraindo blocos harmônicos densos de jazz como `DbMaj9`, `Bb7(13 b9)`, `Fm11`, e `Bb7(b9 b5)`.
+*   **Resultado Técnico:** **Sucesso Parcial (Mapeamento Estrutural com Erros de Sintaxe Harmônica Complexa).** Avaliando o *Bill Evans Fake Book* (imagem `in_april.png`), o NotebookLM localizou com exatidão a página 20 e segmentou a harmonia por seções. No entanto, a análise fina dos acordes revelou os limites do modelo para decodificar convenções avançadas de arranjo e escrita musical em formato de imagem.
+*   **Pontos de Erro Detectados (Análise de Engenharia Harmônica):**
+    1.  **Omissão de Acidentes:** Na partitura original, o segundo acorde é um $Bb7(\flat13 \flat9)$, mas o modelo ignorou o símbolo de bemol da 13ª, extraindo-o como `Bb7(13 b9)`.
+    2.  **Confusão com Linha de Baixo Caminhando:** No trecho onde o acorde de $Db9$ se mantém enquanto o baixo faz um movimento linear de descida ($Db9/Bb \rightarrow /Ab$), o motor visual da IA se confundiu com as barras de inversão e inventou um acorde inexistente (`Ab/Eb`) na transcrição textual.
+    3.  **Inabilidade com Convenções Verticais (Line Cliché):** Diante da grafia de um clichê de linha harmônica — onde um acorde menor passa por uma sétima maior e cai para a sétima menor empilhada verticalmente —, a IA tentou recriar o desenho visual usando blocos matemáticos, gerando a string truncada `Bbm(#7/7)(b7)`. O modelo falhou em interpretar a semântica do movimento melódico interno do jazz, priorizando uma reconstrução gráfica aproximada (e incorreta) no texto.
+*   **Conclusão:** O motor de visão computacional é excelente para guias rápidos e mapeamento macro de PDFs limpos, mas falha ao processar inversões dinâmicas de baixo e empilhamentos harmônicos verticais típicos do Jazz. A validação humana de um especialista continua sendo indispensável.
 
 #### Caso de Teste 4: Verificação de Ambiguidade e Auto-Correção Histórica
 *   **Pergunta:** *"Encontre a música 'Na baixa do sapateiro' de Ary Barroso. Quais os 10 primeiros acordes?"*
