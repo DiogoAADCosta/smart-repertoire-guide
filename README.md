@@ -474,3 +474,5 @@ A evolução do protótipo atual para um ambiente de produção comercial e mult
 
 #### 3. Vetorização Avançada de Imagens e Partituras (Vector Embeddings)
 * Para solucionar o gargalo técnico mapeado no Caso de Teste 5 (onde a IA falha ao ler partituras puras e manuscritos), integrar modelos de visão computacional especializados em leitura de partituras (como *Optical Music Recognition - OMR*) acoplados a um banco de dados vetorial (**ChromaDB** ou **Pinecone**). Isso converterá o desenho das notas na pauta em vetores semânticos, permitindo que o motor analise a harmonia de músicas que não possuem cifras textuais escritas.
+
+FALAR TAMBÈM SOBRE A DEMORA NAS RESPOSTAS. A DEMORA DEVE SER APENAS PARA CONSULTAR O BANCO DE DADOS NA HORA DE ENCONTRAR AS MÚSICAS. ENQUANTO ESTÁ ROLANDO AS PERGUNTAS DE TRIAGEM A RESPOSTA DEVE SER MAIS RÁPIDA POIS NÃO É NECESSÁRIO CONSULTA AO BANCO DE SONGBOOKS.
