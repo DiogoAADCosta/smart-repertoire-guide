@@ -18,7 +18,7 @@ The main objective of the ecosystem is to serve as a dynamic supporting tool for
 
 ### The Role of the Code of Conduct
 
-To guarantee that the artificial intelligence operates exactly as a music teacher needs, the system is controlled by a rigid rule file called the [Code of Conduct](./docs/code_of_conduct.txt). This instruction manual dictates how the AI must behave, ensuring three main points:
+To guarantee that the artificial intelligence operates exactly as a music teacher needs, the system is controlled by a rigid rule file called the [Code of Conduct](./code_of_conduct.txt). This instruction manual dictates how the AI must behave, ensuring three main points:
 
 * **Prevents Hallucinations:** Reinforces the restriction against using the regular internet to search for chords, forcing the AI to read exclusively from the trusted files uploaded by the teacher.
 * **Organizes Difficulty:** Defines clear separation boundaries for Levels 1, 2, and 3 (Beginner, Intermediate, and Advanced), ensuring that a beginner student never receives a song that is overly complex.
@@ -41,7 +41,7 @@ Consists of a selection of open and free sources of high theoretical, historical
 * [Technical Article - Rhythm and Harmony (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - University paper analyzing the cadences of Brazilian popular music.
 * [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Open songbook containing national and international classics.
 
-> **Installation Note:** To activate the assistant in your own environment, the user can download the `guia_de_conduta.txt` file directly from this repository and upload it to the "Sources" sidebar in NotebookLM, or simply copy its textual content and paste it as the very first message in the chat.
+> **Installation Note:** To activate the assistant in your own environment, the user can download the `code_of_conduct.txt` file directly from this repository and upload it to the "Sources" sidebar in NotebookLM, or simply copy its textual content and paste it as the very first message in the chat.
 
 ### 2. Private Database (Production Scenario - Personal Use)
 For day-to-day use in guitar lessons, the system is expanded with my personal archive of 46 digitized volumes. This base was categorized into three major groups according to their origin and predominant visual profile:
@@ -129,12 +129,12 @@ In this phase, we pushed NotebookLM to its limits by uploading various types of 
 
 ## 🔬 Phase 2: Prompt Architecture and Control Engineering
 
-To ensure the artificial intelligence functions exactly as a music teacher needs and does not invent answers outside the official sources, system behavior was armored using a Structured Prompt Engineering technique. The entire chat flow is governed by the [Code of Conduct](./docs/guia_de_conduta.txt) file.
+To ensure the artificial intelligence functions exactly as a music teacher needs and does not invent answers outside the official sources, system behavior was armored using a Structured Prompt Engineering technique. The entire chat flow is governed by the [Code of Conduct](./code_of_conduct.txt) file.
 
 ### 1. Initialization by State Injection (Overriding)
 During Phase 1 testing, a concurrency vulnerability was discovered: when rule manuals are placed only as files in NotebookLM's source sidebar, the massive volume of songbook data competes equally with the rules. Direct user queries for specific songs caused the AI to retrieve raw data and bypass pedagogical constraints (*prompt bypass*).
 
-**The Technical Solution:** The system was engineered to require the user to copy the content of `guia_de_conduta.txt` and paste it as the very first message in the chat. This action forces the AI to override its baseline behavior guidelines (*overriding*), locking the model into an imperative state machine that strictly isolates PDFs as secondary lookup sources.
+**The Technical Solution:** The system was engineered to require the user to copy the content of `code_of_conduct.txt` and paste it as the very first message in the chat. This action forces the AI to override its baseline behavior guidelines (*overriding*), locking the model into an imperative state machine that strictly isolates PDFs as secondary lookup sources.
 
 ### 2. Pedagogical State Mapping (Student Levels)
 The Code of Conduct divides assistant support into three rigid levels of technical maturity, controlling the complexity of the outputs the AI is allowed to deliver:
