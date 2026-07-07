@@ -2,14 +2,27 @@
 
 ## Contexto e Objetivos
 
-O ensino de improvisação musical na guitarra e no violão exige o acesso a um repertório harmônico preciso e estruturado de acordo com o nível de proficiência do estudante. No entanto, instrutores enfrentam desafios crônicos ao buscar materiais didáticos na internet aberta para preparar suas aulas:
+Este projeto foi desenvolvido como parte prática integrante da formação no **Bootcamp Bradesco - GenAI, Dados & Cyber**, realizado em parceria com a **DIO (Digital Innovation One)**. O objetivo é aplicar conceitos de curadoria de dados, inteligência artificial contextualizada (RAG - *Retrieval-Augmented Generation*) e engenharia de prompts na construção de um ecossistema de aprendizagem focado no ensino musical.
 
-* **Poluição e Inconsistência de Dados:** Plataformas públicas de cifras frequentemente contêm erros de transcrição, omissão de extensões fundamentais (como nonas, décimas terceiras ou alterações de jazz) e diagramas incorretos que distorcem a realidade da peça musical.
+O ensino de improvisação na guitarra e no violão exige o acesso a um repertório harmônico preciso e estruturado de acordo com o nível de proficiência do estudante. No entanto, instrutores enfrentam desafios crônicos ao buscar materiais didáticos na internet aberta para preparar suas aulas:
+
+* **Poluição e Inconsistência de Dados:** Plataformas públicas de cifras frequentemente contêm erros de transcrição, omissão de extensões (como nonas, décimas terceiras ou alterações de jazz) e diagramas incorretos que distorcem a realidade da peça musical.
 * **Sobrecarga Cognitiva:** Motores de busca tradicionais não filtram repertórios por densidade harmônica ou critérios pedagógicos (como presença de modulações ou número de acordes na estrutura), exigindo uma filtragem manual demorada por parte do professor.
 
-O **Smart Repertoire Guide** atua como um assistente especialista e caderno de consulta pessoal para o instrutor de música, baseado em inteligência artificial. O núcleo do sistema opera sob uma política estrita de fonte fechada, restringindo sua base de conhecimento a um acervo privado de 45 songbooks e métodos de alta fidelidade e credibilidade histórica (como as obras de Almir Chediak e Real Books de Jazz). 
+O **Smart Repertoire Guide** atua como um assistente especialista e caderno de consulta pessoal para o instrutor de música, baseado em inteligência artificial. Para atender aos critérios pedagógicos e operacionais, o projeto foi estruturado em dois cenários de banco de dados:
 
-O objetivo principal é servir como uma ferramenta de apoio dinâmica para as aulas do professor: você digita os conhecimentos teóricos que o seu aluno já possui no momento (se ele domina ou não campos harmônicos, extensões ou cadências como o II-V-I) e o modelo varre a base de dados confiável para sugerir repertórios sob medida. O sistema permite filtrar as sugestões escolhendo uma tonalidade específica ou um gênero musical focado (como Jazz, Choro, MPB ou Bossa Nova), entregando um roteiro analítico completo com foco em notas-alvo (*target notes*) e estratégias de escalas para o improviso.
+1. **Cenário de Homologação (Bootcamp DIO):** Utiliza uma base de dados fundamentada em links institucionais e materiais de domínio público gratuitos localizados na internet. O objetivo é demonstrar com total segurança jurídica, fidelidade e transparência o potencial técnico e a funcionalidade prática do motor de IA. Não envolve o meu acervo pessoal pois é um conteúdo protegido por direitos autorais.
+2. **Cenário de Production (Meu Uso Pessoal):** Opera sob uma política estrita de fonte fechada (*Grounding*), expandindo a base de conhecimento para o meu acervo pessoal, composto por 46 songbooks e métodos de alta fidelidade e credibilidade histórica (como as obras de Almir Chediak e Real Books de Jazz).
+
+O objetivo principal do ecossistema é servir como uma ferramenta de apoio dinâmica para aulas de professores de música: você digita os conhecimentos teóricos que o seu aluno já possui no momento (se ele domina ou não campos harmônicos, extensões ou cadências como o II-V-I) e o modelo varre a base de dados ativa para sugerir repertórios sob medida. O sistema permite filtrar as sugestões escolhendo uma tonalidade específica ou um gênero musical focado (como Jazz, Choro, MPB ou Bossa Nova), entregando um roteiro analítico completo com foco em notas-alvo (*target notes*) e estratégias de escalas para o improviso.
+
+### O Papel do Guia de Conduta
+
+Para garantir que a inteligência artificial funcione exatamente como um professor de música precisa, o sistema é controlado por um arquivo rígido de regras chamado **Guia de Conduta** (![Guia de Conduta](./guia_de_conduta.txt)). Esse manual de instruções dita como a IA deve se comportar, garantindo três pontos principais:
+
+* **Evita Alucinações:** Bloqueia o uso da internet comum para buscar cifras, obrigando a IA a ler apenas os arquivos de confiança enviados pelo professor.
+* **Organiza a Dificuldade:** Define regras claras de separação para os Níveis 1, 2 e 3 (Iniciante, Intermediário e Avançado), garantindo que um aluno iniciante nunca receba uma música complexa demais.
+* **Limpa Textos Ruins:** Instruções específicas ensinam a IA a ignorar sujeiras visuais e erros de leitura de PDFs antigos (como símbolos sem sentido gerados pelo escaneamento), permitindo que ela corrija cifras quebradas usando a lógica da própria música.
 
 ---
 
