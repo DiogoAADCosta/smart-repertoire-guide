@@ -40,7 +40,7 @@ Consiste em uma seleção de fontes abertas e gratuitas de alta autoridade teór
 * [Análise Harmônica e Improvisação (PDF)](https://cdn.prod.website-files.com/65dcd4c1ddd64f2ee53eb284/674829d8f32b8fbebe6a6019_43114043937.pdf) - Material didático focado em técnicas de roteiros de improviso.
 * [Artigo Técnico - Ritmo e Harmonia (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - Documento universitário que analisa as cadências da música popular brasileira.
 * [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Cancioneiro aberto contendo clássicos da música nacional e internacional.
-* [Guia de Conduta do Sistema (Texto Plano)](./guia_de_conduta.txt) - O arquivo de instruções que deve ser injetado no NotebookLM para controlar o comportamento da IA.
+* [Guia de Conduta do Sistema (Texto Plano)](./guia_de_conduta.txt) - O arquivo de instruções que deve ser injetado no NotebookLM para controlar o comportamento da IA.  Copie e cole o guia em um arquivo .txt e suba junto com as fontes.
 
 > **Nota de Instalação:** Para ativar o assistente em seu próprio ambiente, o usuário pode baixar o arquivo `guia_de_conduta.txt` diretamente deste repositório e fazer o upload dele na barra lateral de "Fontes" do NotebookLM, ou simplesmente copiar o seu conteúdo textual e colá-lo como a primeira mensagem do chat.
 
