@@ -26,17 +26,18 @@ Este projeto valida o uso do Google NotebookLM para:
 A estrutura de dados foi dividida em dois cenários complementares:
 
 ### 1. Homologação (Bootcamp DIO - Fontes Abertas)
-1. [Música Brasilis](https://musicabrasilis.org.br/pt-br/) - Portal de referência para partituras e acervo da música brasileira.
-2. [Bossa Nova Fakebook Vol. 2 (PDF)](https://musicishealing.com/Bateria/Pagode/Library/BossaNovaFakebook2.pdf) - Livro de cifras focado no repertório tradicional de Bossa Nova.
-3. [Jazz Library](https://jazz-library.com/songs/) - Base de dados pública com estruturas harmônicas e músicas clássicas do Jazz.
-4. [Anais da ANPPOM - Artigo sobre Bossa Nova (PDF)](https://anppom.org.br/anais/anaiscongresso_anppom_2025/papers/182.pdf) - Estudo acadêmico sobre a estruturação e evolução harmônica nacional.
-5. [Análise Harmônica e Improvisação (PDF)](https://cdn.prod.website-files.com/65dcd4c1ddd64f2ee53eb284/674829d8f32b8fbebe6a6019_43114043937.pdf) - Material didático focado em técnicas de roteiros de improviso.
-6. [Artigo Técnico - Ritmo e Harmonia (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - Documento universitário que analisa as cadências da música popular brasileira.
-7. [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Cancioneiro aberto contendo clássicos da música nacional e internacional.
+1. [Guia de Conduta do Sistema (Texto Plano)](./docs/guia_de_conduta.txt) - O arquivo de instruções estruturadas que rege o comportamento pedagógico e operacional da IA.
+2. [Música Brasilis](https://musicabrasilis.org.br/pt-br/) - Portal de referência para partituras e acervo da música brasileira.
+3. [Bossa Nova Fakebook Vol. 2 (PDF)](https://musicishealing.com/Bateria/Pagode/Library/BossaNovaFakebook2.pdf) - Livro de cifras focado no repertório tradicional de Bossa Nova.
+4. [Jazz Library](https://jazz-library.com/songs/) - Base de dados pública com estruturas harmônicas e músicas clássicas do Jazz.
+5. [Anais da ANPPOM - Artigo sobre Bossa Nova (PDF)](https://anppom.org.br/anais/anaiscongresso_anppom_2025/papers/182.pdf) - Estudo acadêmico sobre a estruturação e evolução harmônica nacional.
+6. [Análise Harmônica e Improvisação (PDF)](https://cdn.prod.website-files.com/65dcd4c1ddd64f2ee53eb284/674829d8f32b8fbebe6a6019_43114043937.pdf) - Material didático focado em técnicas de roteiros de improviso.
+7. [Artigo Técnico - Ritmo e Harmonia (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - Documento universitário que analisa as cadências da música popular brasileira.
+8. [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Cancioneiro aberto contendo clássicos da música nacional e internacional.
 
 ### 2. Produção (Uso Pessoal)
-Todo o processo real de construção, testes de estresse e validação pedagógica do motor de IA foi expandido para o meu uso diário através de parte do meu acervo privado, contando com 46 songbooks e métodos digitalizados de alta fidelidade (como as obras de Almir Chediak e Real Books de Jazz).
 
+Todo o processo real de construção, testes de estresse e validação pedagógica do motor de IA foi expandido para o meu uso diário através de parte do meu acervo privado, contando com 46 songbooks e métodos digitalizados de alta fidelidade (como as obras de Almir Chediak e Real Books de Jazz).
 ---
 
 ## Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
