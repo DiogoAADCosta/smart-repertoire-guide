@@ -33,6 +33,7 @@ To feed the assistant's knowledge base, the data structure was split according t
 ### 1. Public Database (Homologation Scenario - DIO Bootcamp)
 Consists of a selection of open and free sources of high theoretical, historical, and pedagogical authority. These materials provide the necessary foundation for NotebookLM to locate songs, chords, and rules without infringing on copyrights:
 
+* [System Code of Conduct (Plain Text)](./code_of_conduct.txt) - The structured instruction manual governing the pedagogical and operational behavior of the AI. Copy and paste the guide into a .txt file and upload it along with the sources.
 * [Música Brasilis](https://musicabrasilis.org.br/pt-br/) - Reference portal for sheet music and archives of Brazilian music.
 * [Bossa Nova Fakebook Vol. 2 (PDF)](https://musicishealing.com/Bateria/Pagode/Library/BossaNovaFakebook2.pdf) - Chord chart book focused on traditional Bossa Nova repertoire.
 * [Jazz Library](https://jazz-library.com/songs/) - Public database with harmonic structures and classic Jazz songs.
