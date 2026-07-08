@@ -24,16 +24,21 @@ This project validates the use of Google NotebookLM to:
 The data structure was divided into two complementary scenarios:
 
 ### 1. Homologation (DIO Bootcamp - Open Sources)
-1. [Música Brasilis](https://musicabrasilis.org.br/pt-br/) - Reference portal for Brazilian sheet music and archives.
-2. [Bossa Nova Fakebook Vol. 2 (PDF)](https://musicishealing.com/Bateria/Pagode/Library/BossaNovaFakebook2.pdf) - Chord charts book focused on traditional Bossa Nova repertoire.
-3. [Jazz Library](https://jazz-library.com/songs/) - Public database featuring harmonic structures and Jazz classics.
-4. [Anais da ANPPOM - Bossa Nova Article (PDF)](https://anppom.org.br/anais/anaiscongresso_anppom_2025/papers/182.pdf) - Academic study on national harmonic structuring and evolution.
-5. [Harmonic Analysis and Improvisation (PDF)](https://cdn.prod.website-files.com/65dcd4c1ddd64f2ee53eb284/674829d8f32b8fbebe6a6019_43114043937.pdf) - Educational material focusing on improvisation roadmap techniques.
-6. [Technical Article - Rhythm and Harmony (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - University paper analyzing Brazilian popular music cadences.
-7. [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Open songbook containing national and international classics.
+
+1. [System Code of Conduct (Plain Text)](./docs/code_of_conduct.txt) - The structured instruction manual governing the pedagogical and operational behavior of the AI. Copy and paste the guide into a .txt file and upload it along with the sources.
+2. [Música Brasilis](https://musicabrasilis.org.br/pt-br/) - Reference portal for Brazilian sheet music and archives.
+3. [Bossa Nova Fakebook Vol. 2 (PDF)](https://musicishealing.com/Bateria/Pagode/Library/BossaNovaFakebook2.pdf) - Chord charts book focused on traditional Bossa Nova repertoire.
+4. [Jazz Library](https://jazz-library.com/songs/) - Public database featuring harmonic structures and Jazz classics.
+5. [Anais da ANPPOM - Bossa Nova Article (PDF)](https://anppom.org.br/anais/anaiscongresso_anppom_2025/papers/182.pdf) - Academic study on national harmonic structuring and evolution.
+6. [Harmonic Analysis and Improvisation (PDF)](https://cdn.prod.website-files.com/65dcd4c1ddd64f2ee53eb284/674829d8f32b8fbebe6a6019_43114043937.pdf) - Educational material focusing on improvisation roadmap techniques.
+7. [Technical Article - Rhythm and Harmony (UNICAMP)](https://www.iar.unicamp.br/wp-content/uploads/2021/07/V2_ED03_A1_BossaNova.pdf) - University paper analyzing Brazilian popular music cadences.
+8. [Songbook As 101 Melhores Canções do Século XX (PDF)](https://ekladata.com/kvdp5s2Kp2nEQ7-yNaJbgheQFH0/Songbook-As-101-Melhores-Cancoes-do-Seculo-XX-Vol-1.pdf) - Open songbook containing national and international classics.
 
 ### 2. Production (Personal Use)
-The actual process of building, stress testing, and pedagogically validating the AI engine was expanded for the instructor's daily teaching operations by integrating a private collection of **46 digitized songbooks and methods** of high historical credibility (such as Almir Chediak's complete works and Jazz Real Books).
+
+The actual process of building, stress testing, and pedagogically validating the AI engine was expanded for the instructor's daily teaching operations by integrating a private collection of 46 digitized songbooks and methods of high historical credibility (such as Almir Chediak's complete works and Jazz Real Books).
+
+---
 
 ---
 
